@@ -46,6 +46,18 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+@app.get("/")
+def root():
+    return {
+        "message": "SHL Assessment Recommender API is running"
+    }
+
+@app.get("/health")
+def health():
+    return {
+        "status": "ok"
+    }
+
 from api.routes import router
 
 app.include_router(router)
