@@ -172,7 +172,7 @@ A lightweight TF-IDF approach was selected because it:
 - reduces deployment complexity
 - minimizes RAM consumption
 - improves startup speed
-- works reliably on Render free-tier infrastructure
+- works reliably on Render free tier infrastructure
 - provides stable deterministic retrieval for constrained catalogs
 
 This design prioritizes:
@@ -313,121 +313,8 @@ Main conversational recommendation endpoint.
 
 ---
 
-# Local Setup
 
-## Clone Repository
 
-```bash
-git clone https://github.com/NehaAnalyzes/shl-assessment-recommender.git
-```
-
----
-
-## Enter Project Directory
-
-```bash
-cd shl-assessment-recommender
-```
-
----
-
-## Create Virtual Environment
-
-```bash
-python -m venv .venv
-```
-
----
-
-## Activate Environment
-
-### Windows
-
-```bash
-.venv\Scripts\activate
-```
-
-### Linux / Mac
-
-```bash
-source .venv/bin/activate
-```
-
----
-
-## Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## Build TF-IDF Index
-
-```bash
-python build_catalog.py
-```
-
----
-
-## Run FastAPI Server
-
-```bash
-python -m uvicorn main:app --reload
-```
-
----
-
-## Open Swagger Docs
-
-```text
-http://127.0.0.1:8000/docs
-```
-
----
-
-# Docker Setup
-
-## Build Docker Image
-
-```bash
-docker build -t shl-recommender .
-```
-
----
-
-## Run Docker Container
-
-```bash
-docker run -p 8000:10000 shl-recommender
-```
-
----
-
-## Open Swagger Docs
-
-```text
-http://localhost:8000/docs
-```
-
----
-
-# Deployment
-
-The application is deployed on Render using Docker.
-
----
-
-## Deployment Files
-
-```text
-Dockerfile
-Render.yaml
-runtime.txt
-```
-
----
 
 # Testing Strategy
 
@@ -477,7 +364,7 @@ Benefits:
 # Challenges Faced
 
 Earlier iterations used:
-- sentence-transformers
+- sentence transformers
 - FAISS
 - hosted LLM APIs
 
@@ -488,7 +375,7 @@ These introduced:
 - slower startup
 - Python compatibility issues
 
-The architecture was simplified into a lightweight TF-IDF retrieval-first design for improved robustness and free-tier compatibility.
+The architecture was simplified into a lightweight TF-IDF retrieval first design for improved robustness and free-tier compatibility.
 
 ---
 
@@ -504,11 +391,3 @@ Potential future improvements include:
 
 ---
 
-# Author
-
-Neha Pramod
-
-GitHub:
-```text
-https://github.com/NehaAnalyzes/shl-assessment-recommender
-```
