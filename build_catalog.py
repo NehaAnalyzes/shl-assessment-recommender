@@ -3,14 +3,7 @@ build_catalog.py
 
 Builds embeddings + vector index from local SHL catalog.
 
-Expected file:
-    data/catalog.json
 
-Usage:
-    python build_catalog.py
-
-Force rebuild:
-    python build_catalog.py --force
 """
 
 import logging
